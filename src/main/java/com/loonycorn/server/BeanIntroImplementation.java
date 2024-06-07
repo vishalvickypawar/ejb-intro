@@ -4,14 +4,21 @@ import javax.annotation.Resource;
 import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 
-@Stateless(name = "FirstBean")
+@Stateless
 public class BeanIntroImplementation implements BeanIntroInterface {
 
     @Resource
     private SessionContext context;
 
+    public String name;
+
     @Override
     public String getMessage() {
-        return "Welcome, kid, to the world of EJB!";
+        return String.format("Welcome %s, to the world of EJB!", name );
+    }
+
+    @Override
+    public void setName(String givenName) {
+        name = givenName;
     }
 }
