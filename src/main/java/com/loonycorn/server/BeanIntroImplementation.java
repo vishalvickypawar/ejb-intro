@@ -2,9 +2,11 @@ package com.loonycorn.server;
 
 import javax.annotation.Resource;
 import javax.ejb.SessionContext;
-import javax.ejb.Stateless;
+import javax.ejb.Stateful;
+//import javax.ejb.Stateless;
 
-@Stateless
+@Stateful
+//@Stateless
 public class BeanIntroImplementation implements BeanIntroInterface {
 
     @Resource
